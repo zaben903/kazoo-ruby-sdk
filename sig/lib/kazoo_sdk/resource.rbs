@@ -1,0 +1,46 @@
+# Copyright (C) 2022  Zach Bensley
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+module KazooSDK
+  class Resource
+    attr_accessor self.schema_definition: Hash[Symbol, untyped]
+    attr_accessor self.schema_version: String
+    attr_accessor client: KazooSDK::Client
+
+    def initialize: (client: KazooSDK::Client) -> void
+
+    def schema_definition: () -> Hash[Symbol, untyped]
+
+    private
+
+    attr_accessor self.version: String
+
+    def get_request: (String, ?params: Hash[Symbol, untyped], ?headers: Hash[Symbol, untyped]?, ?return_data: bool) -> untyped
+
+    def post_request: (String, ?body: (Hash[Symbol, untyped] | Array[untyped] | String), ?headers: Hash[Symbol, untyped]?, ?skip_validation: bool, ?return_data: bool) -> untyped
+
+    def put_request: (String, ?body: (Hash[Symbol, untyped] | Array[untyped] | String), ?headers: Hash[Symbol, untyped]?, ?skip_validation: bool, ?return_data: bool) -> untyped
+
+    def delete_request: (String, ?headers: Hash[Symbol, untyped]?) -> untyped
+
+    def patch_request: (String, ?body: (Hash[Symbol, untyped] | Array[untyped] | String), ?headers: Hash[Symbol, untyped]?, ?skip_validation: bool, ?return_data: bool) -> untyped
+
+    def prepare_body: (untyped) -> untyped
+
+    def handle_response: (untyped, ?return_data: bool) -> untyped
+
+    def validate!: (Hash[Symbol, untyped]) -> void
+  end
+end

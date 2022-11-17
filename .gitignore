@@ -1,4 +1,10 @@
-*.gem
-.bundle
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+/.idea/
 Gemfile.lock
-pkg/*

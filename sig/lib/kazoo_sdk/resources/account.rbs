@@ -1,0 +1,84 @@
+# Copyright (C) 2022  Zach Bensley
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+module KazooSDK
+  class Account < Resource
+    SCHEMA_NAME: "accounts"
+
+    def list: () -> Array[Hash[Symbol, untyped]]
+
+    def create: (Hash[Symbol, untyped]) -> Hash[Symbol, untyped]
+
+    def delete: (?String) -> Hash[Symbol, untyped]
+
+    def get: (?String) -> Hash[Symbol, untyped]
+
+    def update: (?String, Hash[Symbol, untyped]) -> Hash[Symbol, untyped]
+
+    def create_child: (?String, Hash[Symbol, untyped]) -> Hash[Symbol, untyped]
+
+    def parent_ids: (?String) -> Array[Hash[Symbol, untyped]]
+
+    def ancestor_tree: (?String) -> Array[Hash[Symbol, untyped]]
+
+    def siblings: (?String) -> Array[Hash[Symbol, untyped]]
+
+    def descendants: (?String) -> Array[Hash[Symbol, untyped]]
+
+    def children: (?String) -> Array[Hash[Symbol, untyped]]
+
+    def demote_reseller: (?String) -> Hash[Symbol, untyped]
+
+    def promote_reseller: (?String) -> Hash[Symbol, untyped]
+
+    def move: (?String, Hash[Symbol, untyped]) -> Hash[Symbol, untyped]
+
+    def api_key: (?String) -> Hash[Symbol, untyped]
+
+    def reset_api_key: (?String) -> Hash[Symbol, untyped]
+
+    def call_recording: (?String) -> CallRecording
+
+    def conference: (?String) -> Conference
+
+    def device: (?String) -> Device
+
+    def directory: (?String) -> Directory
+
+    def fax: (?String) -> Fax
+
+    def hotdesk: (?String) -> Hotdesk
+
+    def media: (?String) -> Media
+
+    def menu: (?String) -> Menu
+
+    def queue: (?String) -> Queue
+
+    def page_group: (?String) -> Group::Page
+
+    def ring_group: (?String) -> Group::Ring
+
+    def storage: (?String) -> Storage
+
+    def temporal_rule: (?String) -> TemporalRule
+
+    def temporal_rule_set: (?String) -> TemporalRuleSet
+
+    def user: (?String) -> User
+
+    def voicemail: (?String) -> Voicemail
+  end
+end
